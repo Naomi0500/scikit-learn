@@ -1,0 +1,47 @@
+```
+-Menos valores en la matriz 
+-Un nuevo caso 2.0, 2.3
+```
+
+
+import numpy as np  #Biblioteca fundamental para arreglos multidimensionales
+
+from sklearn.neighbors import KNeighborsClassifier #Clase de scikit-learn para implementar el algoritmo k-NN. Permite configurar parámetros como `k` (número de vecinos) y la de distancia Manhattan.  
+
+# Datos de entrenamiento 
+
+X = np.array([ #Matriz
+
+    [2, 0],
+
+    [4, 4],
+
+    [1, 1],
+
+    [2, 4],
+
+    [2, 2]
+
+])
+
+
+y = np.array([1, 1, 0, 1, 0]) # Clases
+
+# Configurar el clasificador k-NN con k=1 y distancia Manhattan  (k=1, distancia='manhattan')
+
+knn = KNeighborsClassifier(n_neighbors=1, metric='manhattan')
+
+# Entrenamiento 
+
+knn.fit(X, y)
+
+
+# Clasificar el nuevo caso (2.0, 2.3)
+
+nuevo_caso = np.array([[2.0, 2.3]])
+
+clase_predicha = knn.predict(nuevo_caso)
+
+
+
+print(f"Clase predicha para (2.0, 2.3): {clase_predicha[0]}")
