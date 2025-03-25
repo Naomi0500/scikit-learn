@@ -1,0 +1,27 @@
+#Valores de la matriz de confusión
+
+TP = 50
+
+TN = 33
+
+FP = 15
+
+FN = 18
+
+
+# Medidas de evaluacion
+
+accuracy = (TP + TN) / (TP + TN + FP + FN) #Exclusividad
+
+precision = TP / (TP + FP) #Presion
+
+recall = TP / (TP + FN) #Senciblidad
+
+f1 = 2 * (precision * recall) / (precision + recall) #F1-Measure:
+
+
+print(f"Accuracy: {accuracy:.2f}")
+
+print(f"Precision: {precision:.2f}")
+
+print(f"F1-Measure: {f1:.2f}")
